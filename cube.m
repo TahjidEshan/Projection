@@ -3,9 +3,9 @@ function [] = cube()
     close all;
     num = 100;
     t = sort(rand(num,1))*10;
-    xstart = -1;
-    ystart = 2;
-    zstart = 3;
+    xstart = 0;
+    ystart = 0;
+    zstart = 0;
     r_0 = {xstart, ystart, zstart};
     v_z = {0, 0, 1};
     v_y = {0, 1, 0};
