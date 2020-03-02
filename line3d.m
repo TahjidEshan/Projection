@@ -1,0 +1,42 @@
+clc;
+close all;
+num = 5000;
+t = sort(rand(num,1))*10;
+r_0 = {-1, 2, 3};
+[x_0,y_0,z_0] = r_0{:};
+v = {3, 0, -1};
+[a, b , c] = v{:};
+x = x_0 + a*t;
+y = y_0 + b*t;
+z = z_0 + c*t;
+% disp(x);
+% disp(y);
+% disp(z);
+
+figure(1);
+plot3(x,y,z, '*');
+title('Line');
+xlabel('x'); 
+ylabel('y'); 
+zlabel('z');
+grid on;
+figure(2);
+title('Orthographic Projection');
+plot(x, y, '.');
+figure(3);
+title('Perspective Projection');
+plot(x/z, y/z, '.');
+alpha = 45 * (pi/180);
+rotation = [cos(alpha) -sin(alpha) 0; sin(alpha) cos(alpha) 0; 0 0 1];
+x_new = zeros(size(x));
+y_new = zeros(size(y));
+z_new = zeros(size(z));
+for i=1:num
+	val = rotation.*[x(i) y(i) z(i)];
+    x_new(i) = val(1);
+    y_new(i) = val(2);
+    z_new(i) = val(3);
+end
+figure(4);
+title('Perspective Projection with rotation');
+plot(x_new/z_new, y_new/z_new, '.');
