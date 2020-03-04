@@ -4,10 +4,10 @@ function [] = plotting()
     img1 = imread('len1.jpg');
 
     num = 500;
-    t = sort(rand(num,1))*50;
-    xstart = 450;
-    ystart = 100;
-    zstart = 50;
+    t = sort(rand(num,1))*100;
+    xstart = 150;
+    ystart = 50;
+    zstart = 1;
 
     v_z = {0, 0, 1};
     v_y = {0, 1, 0};
@@ -40,7 +40,8 @@ function [] = plotting()
         figure(1);
         imshow(img1);
         hold on;
-        plot3([x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11 x12],[y1 y2 y3 y4 y5 y6 y7 y8 y9 y10 y11 y12],[z1 z2 z3 z4 z5 z6 z7 z8 z9 z10 z11 z12], 'Color','b');
+        f = 301.0545;
+        plot([x1*f/z1 x2*f/z2 x3*f/z3 x4*f/z4 x5*f/z5 x6*f/z6 x7*f/z7 x8*f/z8 x9*f/z9 x10*f/z10 x11*f/z11 x12*f/z12],[y1*f/z1 y2*f/z2 y3*f/z3 y4*f/z4 y5*f/z5 y6*f/z6 y7*f/z7 y8*f/z8 y9*f/z9 y10*f/z10 y11*f/z11 y12*f/z12], 'color', 'b');
         saveas(gcf,['syn' num2str(i) '.png']);
         if i == 1
             figure(2)
@@ -50,7 +51,7 @@ function [] = plotting()
             ylabel('y'); 
             zlabel('z');
             grid on;
-            axis([400 700 50 250 0 200])
+            axis([-50 300 -50 200 -50 200])
         end
     end
 end
