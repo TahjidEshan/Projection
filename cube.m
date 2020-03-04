@@ -47,8 +47,42 @@ function [] = cube()
     figure(3);
     title('Perspective Projection');
     plot([x1/z1 x2/z2 x3/z3 x4/z4 x5/z5 x6/z6 x7/z7 x8/z8 x9/z9 x10/z10 x11/z11 x12/z12],[y1/z1 y2/z2 y3/z3 y4/z4 y5/z5 y6/z6 y7/z7 y8/z8 y9/z9 y10/z10 y11/z11 y12/z12], '.', 'Color','b');
-end
 
+    [x1,y1,z1] = rotate(x1,y1,z1);
+    [x2,y2,z2] = rotate(x2,y2,z2);
+    [x3,y3,z3] = rotate(x3,y3,z3);
+    [x4,y4,z4] = rotate(x4,y4,z4);
+    [x5,y5,z5] = rotate(x5,y5,z5);
+    [x6,y6,z6] = rotate(x6,y6,z6);
+    [x7,y7,z7] = rotate(x7,y7,z7);
+    [x8,y8,z8] = rotate(x8,y8,z8);
+    [x9,y9,z9] = rotate(x9,y9,z9);
+    [x10,y10,z10] = rotate(x10,y10,z10);
+    [x11,y11,z11] = rotate(x11,y11,z11);
+    [x12,y12,z12] = rotate(x12,y12,z12);
+    
+    figure(4);
+    title('Perspective Projection with rotation');
+    plot([x1/z1 x2/z2 x3/z3 x4/z4 x5/z5 x6/z6 x7/z7 x8/z8 x9/z9 x10/z10 x11/z11 x12/z12],[y1/z1 y2/z2 y3/z3 y4/z4 y5/z5 y6/z6 y7/z7 y8/z8 y9/z9 y10/z10 y11/z11 y12/z12], '.', 'Color','b');
+
+end
+function [x_new, y_new, z_new] = rotate(x,y,z)
+    axis = 2;
+    p = 15;
+    if axis == 0
+        x_new = x;
+        y_new = y*cos(p)-z*sin(p);
+        z_new = y*sin(p)+z*cos(p);
+    elseif axis == 1
+        x_new = x*cos(p) + z*sin(p);
+        y_new = y;
+        z_new = z*cos(p) - x*sin(p);
+    elseif axis == 2
+        x_new = x*cos(p) - y*sin(p);
+        y_new = x*sin(p) + y*cos(p);
+        z_new = z;
+    end
+end
 function [x,y,z] = getcoord(r_0, v, t)
     [x_0,y_0,z_0] = r_0{:};
     [a, b , c] = v{:};

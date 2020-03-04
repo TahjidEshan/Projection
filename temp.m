@@ -13,16 +13,19 @@ imshow(im2);
 hold on;
 [x2 y2]=ginput(points);
 f=699.2375;
-b = 2*96; %1 inch = 96 pixels
-xl = sqrt( (x1(1)-x1(2)).^2 + (y1(1)-y1(2)).^2);
-xr = sqrt( (x2(1)-x2(2)).^2 + (y2(1)-y2(2)).^2);
+b = 2*75.5905511811; %1 inch = 96 pixels
+z1 = zeros(points,1);
 
-% f = 301.0545;
-
-z = f*b/(xl-xr);
+for i=1:points
+    z1(i) = f*b/(x2(i)-x1(i));
+end
 figure;
-plot3(x1, y1, [z z z z z z]);
+plot3(x2, y2, z1);
 xlabel('x'); 
 ylabel('y'); 
 zlabel('z');
 grid on;
+
+
+
+

@@ -47,7 +47,7 @@ function [] = fourthtask()
 
 
     figure(2)
-%     plot3([x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11 x12],[y1 y2 y3 y4 y5 y6 y7 y8 y9 y10 y11 y12],[f*b/depth(x1,y1) f*b/depth(x2,y2) f*b/depth(x3,y3) f*b/depth(x4,y4) f*b/depth(x5,y5) f*b/depth(x6,y6) f*b/depth(x7,y7) f*b/depth(x8,y8) f*b/depth(x9,y9) f*b/depth(x10,y10) f*b/depth(x11,y11) f*b/depth(x12,y12)], 'Color','b');
+%     plot3([x1 x2 x3 x4 xscxscsc5 x6 x7 x8 x9 x10 x11 x12],[y1 y2 y3 y4 y5 y6 y7 y8 y9 y10 y11 y12],[f*b/depth(x1,y1) f*b/depth(x2,y2) f*b/depth(x3,y3) f*b/depth(x4,y4) f*b/depth(x5,y5) f*b/depth(x6,y6) f*b/depth(x7,y7) f*b/depth(x8,y8) f*b/depth(x9,y9) f*b/depth(x10,y10) f*b/depth(x11,y11) f*b/depth(x12,y12)], 'Color','b');
     plot3([x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11 x12],[y1 y2 y3 y4 y5 y6 y7 y8 y9 y10 y11 y12],[f*b./depth(int64(x1), int64(y1)) f*b./depth(int64(x2), int64(y2))
         f*b./depth(int64(x3), int64(y3)) f*b./depth(int64(x4), int64(y4)) f*b./depth(int64(x5), int64(y5)) f*b./depth(int64(x6), int64(y6)) 
         f*b./depth(int64(x7), int64(y7)) f*b./depth(int64(x8), int64(y8)) f*b./depth(int64(x9), int64(y9)) f*b./depth(int64(x10), int64(y10)) 

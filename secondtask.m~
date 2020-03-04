@@ -1,8 +1,0 @@
-close all;
-clc;
-
-img = imread('len1.jpg');
-imshow(img)
-hold on
-[x,y]=ginput(2);
-distance=sqrt( (point_1(1)-point_2(1)).^2 + (y(2)-y(2)).^2)
